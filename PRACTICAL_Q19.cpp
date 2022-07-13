@@ -1,0 +1,111 @@
+
+#include<iostream> 
+using namespace std; 
+
+int main() { 	
+
+int n; 	
+cout << "\nEnter the number of vertices: "; 	
+cin >> n; 	 	
+int matrix[n][n]; 
+	
+     for(int i=0; i<n; i++) 
+       {				
+            for(int j=0; j<n; j++) 
+            {
+                 matrix[i][j] = 0;	
+	        }			
+
+        }		 	
+cout << "Enter the adjacency matrix:\n"; 	
+     for(int i=0; i<n; i++) 		
+     {
+          for(int j=0; j<n; j++) 	 
+            {
+             cin >> matrix[i][j];
+            }		
+        cout<<endl;
+     }
+ 	
+	 	
+        int degree, order = 0; 
+	for(int i=0; i<n; i++) 	{ 		
+      degree = 0; 		
+          for(int j=0; j<n; j++) 			
+      degree += matrix[i][j]; 		 		
+      if(degree % 2 != 0) 			
+       order++; 	} 	 	
+      if(order == 0) 		 
+    cout << "Graph has an Eulerian Circuit!" << endl; 	 	
+     else if(order == 2) 		
+   cout << "Graph has an Eulerian Path!" << endl; 	 	
+     else 		
+   cout << "Graph is Not Eulerian!" << endl; 	 	
+
+
+
+return 0; 
+}
+
+/*
+
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    int n , e;
+    int a[n][n];
+    cout<<"Enter number of vertices:";
+    cin>>n;
+    cout<<"Enter number of edges :";
+    cin>>e;
+    
+    for (int i=0; i<n; i++) 
+    {
+        for (int j=0; j<n; j++)
+        {
+            a[i][j] = 0;
+        };
+    }
+    int v, u;
+   
+    for (int i = 0; i < e; i++)
+    {
+        cout<<"Enter the edges :" << endl;
+        cin>>v>>u;
+        a[v][u] = 1;
+        a[u][v] = 1;
+    }
+    cout <<"Adjacency matrix is"<<endl;
+    for (int i = 0; i < n; i++)
+    {
+        for (int j = 0; j < n; j++)
+        {
+            cout <<a[i][j] << "  ";
+        }
+        cout << endl;
+    }
+
+         int degree, order = 0; 
+	for(int i=0; i<n; i++) 	{ 		
+      degree = 0; 		
+          for(int j=0; j<n; j++) 			
+      degree += a[i][j]; 		 		
+      if(degree % 2 != 0) 			
+       order++; 	} 	 	
+      if(order == 0) 		 
+    cout << "Graph has an Eulerian Circuit!" << endl; 	 	
+     else if(order == 2) 		
+   cout << "Graph has an Eulerian Path!" << endl; 	 	
+     else 		
+   cout << "Graph is Not Eulerian!" << endl; 	 	
+
+
+    return 0;
+    }
+    */
+    
+    
+    
+    
